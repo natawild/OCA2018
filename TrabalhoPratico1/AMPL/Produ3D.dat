@@ -1,0 +1,17 @@
+set P := Abadia Classic Stout ;
+set R := Malte Lupo ;
+
+param T 3 ;
+
+param M 40 ;
+
+param a : Abadia Classic Stout :=
+Malte 5 3 1
+Lupo 1 2 3 ;
+
+param b [Malte] 400 [Lupo] 275 ;
+
+param c : 1 2 3:=
+Abadia 25 20 10
+Classic 50 50 50
+Stout 75 80 100;

@@ -1,0 +1,17 @@
+param Norigens:=3;
+param Ndestinos:=3;
+param Custo: 1 2 3 :=
+1 9 5 4
+2 8 2 3
+3 4 5 8;
+
+param QtdO:= 
+1 20
+2 30 
+3 40;
+
+
+param QtdD:=
+1 15
+2 25
+3 50;

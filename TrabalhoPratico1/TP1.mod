@@ -1,28 +1,30 @@
+param vertices;
 
-param NVertices;
-param NOrigens;
-param NDestinos;
+param Norigens;
+param Ndestinos;
 
+set ORIG :={i in 1..Norigens}; # O representa ORIGEM
+set DEST :={j in 1..Ndestinos}; # D representa DESTINO
+param QtdO {i in ORIG}; #ARRAY
+param QtdD {j in DEST};
 
+param matriz{i in 1..vertices, j in 1..vertices};
+param custos{i in ORIG, j in DEST};
 
-set O :={i in 1..NOrigens}; # O representa ORIGEM 
-set D :={j in 1..NDestinos}; # D representa DESTINO
-
-param QtdO {i in O,j in D};
-param QtdD {i in O,j in D};
-
-
-param NodoArco {i in O, j in D };
-param Custo{i in O, j in D };
+var y {i in ORIG, j in DEST}, >=0;
 
 
-#  Variavel de decisao 
-var x {i in O, j in D}, >=0; 
+#Funcao OBJETIVO
+minimize CustoTransporte:sum {i in ORIG, j in DEST} custos [i,j] * y[i,j]; 
 
-#Funçao objetivo minimizar
-minimize custoTransporte:sum {i in O, j in D} Custo [i,j] * x[i,j];
+
 
 #restricoes
+s.t. QddORI {i in 1..5}: sum {j in DEST} matriz[i,j]*y[i,j] = QtdO [i];
+s.t. QddDES {j in 16..20}: sum {i in ORIG} matriz[i,j]*y[i,j] = QtdD [j];
 
-s.t. QddORI {i in O,j in D}: sum {i in O,j in D} x[i,j] = QtdO [i,j];
-s.t. QddDES {i in O,j in D}: sum {i in O,j in D} x[i,j]= QtdD [i,j];
+#conservacao fluxo
+s.t. conser {i in 6..15 } : sum {j in ORIG} matriz[j,i]* y[j,i] - sum{j in DEST} matriz[i,j]* y[i,j]=0;
+
+
+

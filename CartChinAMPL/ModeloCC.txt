@@ -1,0 +1,15 @@
+# numero de vertices 
+param vertices; 
+# numero de arcos 
+param arcos;
+param matrizNA{i in 1..vertices, j in 1..arcos};
+param custo{ j in 1..arcos};
+
+#variavel decisao 
+var x{j in 1..arcos} binary;
+
+#funcao objectivo minimo emparelhamento 
+minimize profit: sum{j in 1..arcos} custo[j]*x[j];
+
+#garante que (para cada vertice) somente um arco incidente no vertice i é escolhido para o emparelhamento 
+subject to cobertura {i in 1..vertices}: sum{j in 1..arcos} x[j]*matrizNA[i,j] = 1;
