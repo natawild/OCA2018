@@ -1,15 +1,11 @@
 solve;
 
-option cplex_options 'timelimit=600'; 
-
-
-
-#### Mostra todas as variaveis;
+#### Mostra todas as variáveis;
 
 #display _varname, _var;
 
 
-#### Mostra so as variaveis iguais a "1";
+#### Mostra só as variáveis iguais a "1";
 
 display {j in 1.._nvars : 0<_var[j]<2} (_varname[j],_var[j]);
 

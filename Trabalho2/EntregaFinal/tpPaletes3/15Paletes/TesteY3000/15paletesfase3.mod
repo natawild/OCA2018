@@ -52,6 +52,6 @@ s.t. custoMovAux: y = sum{i in v1, j in v2} (PALETES[i,4]* (NIVEIS[j,1])* x[i,j]
 #s.t. tentativa1: y <= 15000;
 #s.t. tentativa2: y <=10000;
 #s.t. tentativa3: y <=8000;
-s.t. tentativa4: y <=1840;
+s.t. tentativa4: y <=3000;
 #s.t. tentativa5: y <=1500;
 #s.t. tentativa5: y <=1260;

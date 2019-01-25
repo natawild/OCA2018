@@ -46,12 +46,12 @@ s.t. desperdAlt {i in v1, j in v2} : x[i,j] =1 ==> D[i]= H[j] - PALETES[i,2];
 # calculo do desperdicio da largura
 s.t. desperdLarg {j in v2} : O[j] =1 ==> L[j] >=(3000 - sum {i in v1} PALETES[i,3]*x[i,j]);
 
+s.t. valoresEmCM{j in v2} : L1[j]=L[j]/10; 
+
 
 #restricao para calcular os tempos, definindo uma variavel aux que toma o valor da funcao obj1
 s.t. custoMovAux: y = sum{i in v1, j in v2} (PALETES[i,4]* (NIVEIS[j,1])* x[i,j]);
 #s.t. tentativa1: y <= 6000;
-#s.t. tentativa2: y <=4000;
-#s.t. tentativa3: y <=3000;
-#s.t. tentativa4: y <=2000;
-#s.t. tentativa5: y <=1500;
-s.t. tentativa5: y <=1260;
+s.t. tentativa2: y <=5000;
+#s.t. tentativa3: y <=750;
+#s.t. tentativa4: y <=600;
