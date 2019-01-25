@@ -25,16 +25,16 @@ option gurobi_options $gurobi_options 'timelim 60';
 
 
 
+
 solve;
 
-#### Mostra todas as vari‡veis;
+#### Mostra todas as variaveis;
 
-display _varname, _var;
+#display _varname, _var;
 
 
+#### Mostra so as variáveis iguais a "1";
 
-#### Mostra s— as vari‡veis iguais a "1";
 display {j in 1.._nvars : 0<_var[j]<2} (_varname[j],_var[j]);
 
-# Mostra as vari‡veis com valores > 1
 display {j in 1.._nvars : 1<_var[j]} (_varname[j],_var[j]);

@@ -1,11 +1,11 @@
 solve;
 
-#### Mostra todas as variáveis;
+#### Mostra todas as variaveis;
 
 #display _varname, _var;
 
 
-#### Mostra só as variáveis iguais a "1";
+#### Mostra so as variáveis iguais a "1";
 
 display {j in 1.._nvars : 0<_var[j]<2} (_varname[j],_var[j]);
 
