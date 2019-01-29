@@ -1,3 +1,0 @@
-solve;
-
-display _varname, _var;
