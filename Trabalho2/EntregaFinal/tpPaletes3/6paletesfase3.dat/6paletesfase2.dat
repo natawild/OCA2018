@@ -1,0 +1,25 @@
+param nPaletes:=6;
+param nNiveis:=6;
+
+#Referencia	Altura	Largura	Taxa de utilização
+param PALETES:
+1	2	3	4:=
+1	1	79	1000	176
+2	2	59	1000	176
+3	3	47	1000	167
+4	4	109	800	31
+5	5	109	800	31
+6	6	79	800	29;
+
+
+
+
+#tempo	Largura	Altura
+param NIVEIS:
+	1	2	3:=
+	1	0.58	3200	120
+	2	1.73	3200	120
+	3	2.88	3200	120
+	4	4.03	3200	120
+	5	5.18	3200	120
+	6	6.33	3200	120;

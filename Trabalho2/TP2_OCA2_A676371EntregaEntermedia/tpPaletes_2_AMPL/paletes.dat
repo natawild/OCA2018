@@ -1,0 +1,24 @@
+param nPaletes:=6;
+param nNiveis:=6;
+
+#Referencia	Altura	Largura	Taxa de utilização
+param PALETES:
+1	2	3	4:=
+1	1	79	1000	176
+2	1	59	1000	176
+3	2	47	1000	167
+4	3	47	1000	166
+5	4	59	1000	157
+6	5	46	1000	148;
+
+#distancia	Largura	Altura
+param NIVEIS:
+	1	2	3:=
+1	0	1000	120
+2	1000	1000	120
+3	2000	1000	120
+4	3000	1000	120
+5	4000	1000	120
+6	5000	1000	120;
+
+ 
