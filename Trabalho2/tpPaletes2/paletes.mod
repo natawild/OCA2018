@@ -16,5 +16,12 @@ var x{i in v1,j in v2} binary; #  variavel de decisão que define em que alvéolo 
 
 
 # Restrições
+
+#esta palete tem de ser guardada
 s.t. ArmzPal {i in v1} : sum {j in v2} x[i,j] = 1; 
+
+#
 s.t. OcupNiv {j in v2} : sum {i in v1} PALETES[i,3]*x[i,j] <= NIVEIS[j,2];
+
+#fase2 
+cabe mais do que uma palete num alveolo 
